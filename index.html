@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+     <title>Moderna | Desafios</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div id="app">
+          <nav>
+               <div class="container">
+                    <h1>Moderna</h1>
+                    <div class="links">
+                         <a  class="active" href="https://devpolatto.github.io/Moderna_Aulas/">Desafios</a>
+                         <a href="https://devpolatto.github.io/Moderna_Aulas/projetos.html">Projetos</a>
+                    </div>
+               </div>
+          </nav>
+          <main id="desafios">
+               <div class="desafios-container">
+                    <header>
+                         <h2>Desafios</h2>
+                    </header>
+                    <section class="desafios">
+                         <div id="card-desafio" class="card-desafio">
+                              <h1>Desafio 1</h1>
+                              <h5>HTML e css</h5>
+                              <h4>Data</h4>
+                         </div>
+                         <div id="modal-card-desafio" class="modal-card-desafio">
+                              <div class="modal-content">
+                                   Em produção
+                              </div>
+                         </div>
+                    </section>
+               </div>
+          </main>
+     </div>
+
+     <script>
+          //get the click pon card
+          var cardModal = document.getElementById("card-desafio")
+          // Get the modal
+          var modal = document.getElementById("modal-card-desafio");
+
+          // Get the button that opens the modal
+          var btn = document.getElementById("myBtn");
+
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+
+          cardModal.onclick = () => {
+               modal.style.display = "block";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+               console.log(event.target)
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+     </script>
+
+     <!-- <script src="script.js"></script> -->
+</body>
+</html>

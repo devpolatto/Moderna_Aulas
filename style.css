@@ -1,0 +1,285 @@
+body {
+     width: 100vw;
+     height: 100%;
+}
+
+body {
+margin: 0;
+padding: 0;
+background-image: linear-gradient(180deg, #272A31 0%, #0A0C10 100%);
+background-repeat: no-repeat;
+font-family: 'Roboto', sans-serif;
+overflow: hidden;
+}
+
+#app{
+     width: 100%;
+     height: 100vh;
+}
+
+nav {
+     width: 100%;
+     height: 64px;
+
+     display: flex;
+     justify-content: center;
+}
+
+nav .container{
+     width: 100%;
+     max-width:  1140px;
+     height: 64px;
+
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     gap: 100px;
+
+     padding: 0 12px;
+
+     font-family: 'Roboto', sans-serif;
+
+     color: #F6F6F6;
+}
+
+.nav .container h1{
+     font-size: 32px;
+     font-weight:700;
+}
+
+nav .container .links {
+     display: flex;
+     gap: 16px;
+
+}
+
+nav .container .links a{
+     text-decoration: none;
+     font-size: 24px;
+     font-weight: 500;
+     color: #F6F6F6;
+     position: relative;
+}
+
+nav .container .links .active::before{
+     content: '';
+     width: 8px;
+     height: 8px;
+     border-radius: 50%;
+
+     position: absolute;
+
+     background-color: cyan;
+
+     bottom: -10px;
+     left: 50%;
+}
+
+main {
+
+     width: 100%;
+     height: 100%;
+
+     display: flex;
+     justify-content: center;
+}
+
+main .desafios-container{
+
+     width: 100%;
+     max-width: 1240px;
+     height: 100%;
+
+     padding: 0 8;
+
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;;
+     flex-direction: column;
+     gap: 32px;
+}
+
+main .desafios-container header {
+     width: 100%;
+     text-align: center;;
+}
+
+main .desafios-container header {
+     font-family: 'Roboto', sans-serif;
+     color: #F6F6F6;
+}
+
+main .desafios-container section {
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;  
+}
+
+main .desafios-container section .card-desafio {
+     width: 370px;
+     height: 134px;
+
+     background: rgba(54, 68, 92, 0.9);
+     border-radius: 8px;
+
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+
+     padding: 16px;
+
+     color: #F6F6F6;
+     line-height: 0;
+     transition: 0.3s;
+     cursor: pointer;
+}
+
+.card-desafio:hover{
+     opacity: 0.6;
+     transition: 0s
+}
+
+.modal-card-desafio {
+     display: none; /* Hidden by default */
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+     padding-top: 100px; /* Location of the box */
+     left: 0;
+     top: 0;
+     width: 100%; /* Full width */
+     height: 100%; /* Full height */
+     overflow: auto; /* Enable scroll if needed */
+     background-color: rgb(0,0,0); /* Fallback color */
+     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+     
+}
+
+.modal-content {
+     background: rgba(54, 68, 92, 1);
+     margin: auto;
+     padding: 20px;
+     border: 1px solid #888;
+     width: 800px;
+     min-height: 300px;
+     border-radius: 8px;
+}
+
+main .projetos-container section .card-projeto h1{
+     font-weight: 600;
+     font-size: 24px;
+}
+
+main .projetos-container section .card-projeto h5{
+     font-weight: 400;
+     font-size: 16px;
+}
+
+main .projetos-container section .card-projeto h4{
+     font-weight: 400;
+     font-size: 16px
+}
+
+main .projetos-container{
+
+     width: 100%;
+     max-width: 1240px;
+     height: 100%;
+
+     padding: 0 8;
+
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;;
+     flex-direction: column;
+     gap: 32px;
+}
+
+main .projetos-container header {
+     width: 100%;
+     text-align: center;;
+}
+
+main .projetos-container header {
+     font-family: 'Roboto', sans-serif;
+     color: #F6F6F6;
+}
+
+main .projetos-container section {
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;  
+     gap: 8px;
+     /* overflow: scroll; */
+}
+
+main .projetos-container section .card-projeto {
+     width: 288px;
+     height: auto;
+
+     background: rgba(54, 68, 92, 0.5);
+     border-radius: 8px;
+
+     padding: 8px 8px;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+
+     color: #F6F6F6;
+}
+
+main .projetos-container section .card-projeto .preview img {
+     width: 283px;
+     height: 141px;
+     border-radius: 8px;
+}
+
+main .projetos-container section .card-projeto .info {
+     /* border: 1px solid blue; */
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     /* justify-content: flex-start; */
+     /* align-items: flex-start */
+}
+
+main .projetos-container section .card-projeto .info h3 {
+     font-size: 24px;
+     font-weight: 600;
+     line-height: 0px;
+}
+
+main .projetos-container section .card-projeto .info h5 {
+     font-weight: 500;
+     font-size: 16px;
+     line-height: 1px;
+}
+
+main .projetos-container section .card-projeto .info h4 {
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 0px;
+}
+
+main .projetos-container section .card-projeto .info .actions {
+     display: flex;
+     gap: 8px;
+}
+
+main .projetos-container section .card-projeto .info .actions button{
+     width: 135px;
+     height: 26px;
+
+     background: #D9D9D9;
+     border-radius: 4px;
+     border: none;
+     cursor: pointer;
+}
+
+main .projetos-container section .card-projeto .info .actions button a{
+     text-decoration: none;
+     color: #0A0C10;
+}

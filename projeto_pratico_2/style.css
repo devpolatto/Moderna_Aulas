@@ -1,237 +1,156 @@
+/* #F1FFFA */
+/* #231942 */
+/* #F02D3A */
+
+*{
+     font-family: 'Roboto', sans-serif;
+     margin: 0;
+     padding: 0;
+     scroll-padding-top: 2rem;
+     scroll-behavior: smooth;
+     box-sizing: border-box;
+     list-style: none;
+     text-decoration: none;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-
-    width: 100vw;
-    height: 100vh;
-
-    background-image: linear-gradient(135deg, #272A31 0%, #0A0C10 100%);
-    background-repeat: no-repeat;
-
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-
-    overflow: hidden;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-
-    box-sizing: border-box;
-
+     display: flex;
+     justify-content: center;
+     align-items: center;;
+     flex-direction: column;
 }
 
-#app {
-    width: 32rem;
-    height: auto;
-
-    border: 1px solid rgb(195, 195, 195);
-
-    border-radius: 8px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 10px 16px;
-
-    gap: 42px;
+img {
+     width: 100%;
 }
 
-#app h2 {
-    font-size: 2rem;
+header {
+     position: fixed;;
+     top: 0;
+     left: 0;
+     width: 100%;
+     background-color: #231942;
+     box-shadow: 0 1px 4px hsl(0 4% 15%/10%);
+     z-index: 100;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    /* border: 1px solid cyan; */
+header .container {
+     max-width: 1068px;
+     margin: auto;
+     width: 100%;
 }
 
-form .input {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    gap: 6px;
-} 
-
-form .input label {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #dddddd
+header nav {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 20px 0;
 }
 
-form .input input {
-    width: 100%;
-    height: 42px;
-
-    border: none;
-    border-radius: 4px;
-
-    background-color: #e9e9e9;
-
-    padding-left: 8px;
+header nav a{
+     font-size: 1.3rem;
+     color: #ffffff;
+     font-weight: 500;
 }
 
-form .input select {
-    width: 60%;
-    height: 42px;
-
-    margin-bottom: 2rem;
+header nav .bag{
+     padding: 4px 4px;
+     border: 1px solid #ffffffbd;
+     border-radius: 6px;
 }
 
-form button {
-    width: 200px;
-    height: 42px;
-
-    margin: 24px 0;
-
-    border-radius: 8px;
-    border: none;
-
-    font-size: 1.4rem;
-    font-weight: 600;
-
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
-
-    color: #ffffff;
-
-    transition: 0.3s;
+header nav .cart-icon {
+     width: 2rem;
+     height: 2rem;
+     fill: #F02D3A;
+     cursor: pointer;;
 }
 
-form button:hover {
-    opacity: 0.8;
-    cursor: pointer;
+section {
+     padding: 4rem 0 3rem;
 }
 
-.alerta{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    gap: 10px;
-
-    width: auto;
-    height: 200px;
-
-    position: absolute;
-
-    top: 10px;
-    right: 10px;
-
-    z-index: 10;
+section .shop-title{
+     font-size: 1.7rem;
+     font-weight: 600;
+     text-align: center;
+     color:black;
+     margin-bottom: 2rem;
 }
 
-.alerta .modalContainer {
-
-    display: flex;
-
-    width: auto;
-    min-width: 269px;
-    height: 58;
-
-    padding: 2px 8px;
-
-    background-image: radial-gradient( circle 830px at 95.6% -5%,  rgba(244,89,128,1) 0%, rgba(223,23,55,1) 90% );
-    border-radius: 8px;
-
-    font-size: 1rem;
-    
+section {
+     margin-top: 3rem;
 }
 
-#modalUserCreated {
-    position: absolute;
-
-    bottom: 16px;
-    left: 16px;
-
-    width: auto;
-    height: auto;
-
-    padding: 8px 16px;
-
-    display: none;
-    flex-direction: column;
-
-    background-color: #e6e6e6;
-
-    border-radius: 8px;
-
-    transition: 0.8s;
+.shop-container {
+     max-width: 1068px;
+     /* margin: auto; */
+     width: 100%;
 }
 
-#modalUserCreated .title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
+section .shop-content{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+     gap: 2rem
 }
 
-#modalUserCreated .title .title-svh-checked{
-    fill: rgb(7, 196, 7);
-    width: 30px;
-    height: 30px;
+section .product-box{
+     position: relative;
+     transition: 0.4s;
+
+     min-height: 360px;
+     max-width: 225px;
 }
 
-#modalUserCreated .title h1{
-    font-size: 1.2rem;
-    color:rgb(1, 5, 4)
+section .product-box:hover {
+     padding: 10px;
+     border: 1px solid #afafaf;
+     border-radius: 8px;
 }
 
-#modalUserCreated .data {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    color: rgb(1, 5, 4);
+section img{
+     width: 100%; height: auto;
+     max-height: 200px;
+     margin-bottom: 0.5rem;
 }
 
-#modalUserCreated .data code {
-    margin-left: 24px;
+section .product-title{
+     font-size: 1.1rem;
+     font-weight: 600;
+     text-transform: uppercase;;
+     margin-bottom: 0.6rem;
 }
 
-/* Mobile 500px */
-@media (max-width:500px) {
+section .price{
+     font-weight: 500;
+}
 
-    body{
-        align-items: flex-start;
-    }
+section .add-to-cart-icon{
+     position: absolute; bottom: 0; right: 0;
 
-    #app {
-        width: 85%;
-        margin-top: 40px;
-    }
+     width: 4rem; height: 4rem;
+     fill: rgb(46, 46, 46);
+     transition: 0.3s;
 
-    #app h2 {
-        font-size: 1.6rem;
-    }
+     cursor: pointer;
+     padding: 10px;
+}
 
-    form .input label {
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
+section .add-to-cart-icon:hover{
+     scale: 1.2;
+}
 
-    form .input input {
-        height: 42px;
-    }
+footer{
+     background-color: #231942;
 
-    #modalUserCreated{
-        top: 10px;
-        bottom: unset;
-        z-index: 20;
-    }
+     width: 100%;
+     height: 100px;
+     display: flex;
+     align-items: center;
+     justify-content: center;;
+     text-align: center;;
+}
 
-    #modalUserCreated .title h1 {
-        font-size: 1rem;
-    }
-
-    #modalUserCreated .title .title-svh-checked {
-        width: 20px;
-        height: 20px;
-    }
-
+footer h3{
+     color: #ffffff;
 }

@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: linear-gradient(135deg, #272A31 0%, #0A0C10 100%);
+    background-repeat: no-repeat;
+
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+}
+
+#app {
+    width: 32rem;
+    height: auto;
+
+    border: 1px solid rgb(195, 195, 195);
+
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px 16px;
+
+    gap: 42px;
+}
+
+#app h2 {
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    /* border: 1px solid cyan; */
+}
+
+form .input {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    gap: 6px;
+} 
+
+form .input label {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #dddddd
+}
+
+form .input input {
+    width: 100%;
+    height: 42px;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: #e9e9e9;
+
+    padding-left: 8px;
+}
+
+form .input select {
+    width: 60%;
+    height: 42px;
+
+    margin-bottom: 2rem;
+}
+
+form button {
+    width: 200px;
+    height: 42px;
+
+    margin: 24px 0;
+
+    border-radius: 8px;
+    border: none;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+
+    color: #ffffff;
+
+    transition: 0.3s;
+}
+
+form button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.alerta{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 10px;
+
+    width: auto;
+    height: 200px;
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    z-index: 10;
+}
+
+.alerta .modalContainer {
+
+    display: flex;
+
+    width: auto;
+    min-width: 269px;
+    height: 58;
+
+    padding: 2px 8px;
+
+    background-image: radial-gradient( circle 830px at 95.6% -5%,  rgba(244,89,128,1) 0%, rgba(223,23,55,1) 90% );
+    border-radius: 8px;
+
+    font-size: 1rem;
+    
+}
+
+#modalUserCreated {
+    position: absolute;
+
+    bottom: 16px;
+    left: 16px;
+
+    width: auto;
+    height: auto;
+
+    padding: 8px 16px;
+
+    display: none;
+    flex-direction: column;
+
+    background-color: #e6e6e6;
+
+    border-radius: 8px;
+
+    transition: 0.8s;
+}
+
+#modalUserCreated .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+#modalUserCreated .title .title-svh-checked{
+    fill: rgb(7, 196, 7);
+    width: 30px;
+    height: 30px;
+}
+
+#modalUserCreated .title h1{
+    font-size: 1.2rem;
+    color:rgb(1, 5, 4)
+}
+
+#modalUserCreated .data {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: rgb(1, 5, 4);
+}
+
+#modalUserCreated .data code {
+    margin-left: 24px;
+}
+
+/* Mobile 500px */
+@media (max-width:500px) {
+
+    body{
+        align-items: flex-start;
+    }
+
+    #app {
+        width: 85%;
+        margin-top: 40px;
+    }
+
+    #app h2 {
+        font-size: 1.6rem;
+    }
+
+    form .input label {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    form .input input {
+        height: 42px;
+    }
+
+    #modalUserCreated{
+        top: 10px;
+        bottom: unset;
+        z-index: 20;
+    }
+
+    #modalUserCreated .title h1 {
+        font-size: 1rem;
+    }
+
+    #modalUserCreated .title .title-svh-checked {
+        width: 20px;
+        height: 20px;
+    }
+
+}

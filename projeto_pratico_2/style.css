@@ -217,10 +217,16 @@ footer h3{
      font-size: 1rem;
 }
 
-.cart-product-remove{
-     width: 20px;
-     height: 20px;
-     fill: #dd545e;
+.cart-product-remove-icon{
+     font-size: 2rem;
+     color: #180406;
+     cursor: pointer;
+     transition: 0.4s;
+}
+
+.cart-product-remove-icon:hover{
+     font-size: 2rem;
+     color: #dd545e;
      cursor: pointer;
 }
 

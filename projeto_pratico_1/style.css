@@ -1,174 +1,183 @@
+/* O rem é uma das unidades de medida mais usadas no desenvolvimento front-end.
+1rem é igual ao tamanho padrão da fonte da raiz(root) do documento, normalmente 16px, 
+logo 1rem é igual à 16px.  Por exemplo:*/
+
+/* html{
+     font-size: 16px; Esse é o valor padrão do documento.
+}
+h1{
+     font-size: 2rem; (2 * 16px) = 32px
+}
+h2{
+     font-size: 1.5rem; (1.5 * 16px) = 24px
+} */
+
+*{
+     text-decoration: none;
+     font-style: none;
+}
+
 body, html {
      width: 100vw;
      height: 100vh;
-     }
+     font-family: 'Roboto', sans-serif;
+     color: #ffffff;
+}
      
-     body {
-     margin: 0;
-     padding: 0;
-     background-image: linear-gradient(180deg, #272A31 0%, #0A0C10 100%);
+body {
+margin: 0;
+padding: 0;
+background-image: linear-gradient(180deg, #272A31 0%, #0A0C10 100%);
+background-repeat: no-repeat;
+}
+
+#page{
+     width: 100%;
+     height: 100vh;
+}
+
+header {
+     width: 100%;
+     height: 280px;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     position: relative;
+
+     background-image: linear-gradient( 154deg,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
      background-repeat: no-repeat;
-     }
+}
+
+header .hero-avatar {
+     width: 200px;
+     height: 200px;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     position: absolute;
+     bottom: -60px;
+
+     background-image: linear-gradient(180deg, #0A0C10 0%, rgba(39, 42, 49, 0.41) 100%);
+
+     border-radius: 50%;
+}
+
+header .hero-avatar img {
+     width: 190px;
+     height: 190px;
+
+     border-radius: 50%;
+}
+
+main {
+     width: 100%;
+     height: auto;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+
+     padding-top: 40px
+}
+
+main .bio__sectio-title{     
+     text-align: center;
+}
+
+main .bio__sectio-title h1 {
+     font-weight: 700;
+     font-size: 48px;
+     line-height: 39px;
+}
+
+main .bio__sectio-title h4 {
+     font-weight: 700;
+     font-size: 28px;
+     line-height: 0px;
+     font-weight: 400;
+}
+
+main .bio__section-stack{
+     display: flex;
+     justify-content: center;
+     gap: 16px;
+}
+
+main .bio__section-stack .tech-icon{
+     font-size: 4rem;
+}
+
+main .bio__section-stack .bxl-html5{
+     color: #E9662E;
+}
+main .bio__section-stack .bxl-css3{
+     color: #03A7DB;
+}
+main .bio__section-stack .bxl-javascript{
+     color: #ECC80D;
+}
+
+main .bio__section-aboutme {
+     width: 500px;
+     margin-top: 24px;
+}
+
+main .bio__section-aboutme p{
+     font-style: normal;
+     font-weight: 500;
+     font-size: 16px;
+     line-height: 19px;
+     text-align: center;
+}
+
+main .bio__section-socialLinks {
+     display: flex;
+     flex-direction: row;
+     gap: 16px;
+
+     margin-top: 50px;
+}
+
+main .bio__section-socialLinks a {
+     border-radius: 8px;
+     border: none;
+
+     font-size: 1.2rem;
+     cursor: pointer;
+     outline: none;
+
+     width: 160px;
+     height: 48px;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;   
+     gap: 8px;
+
+     transition: 0.3s;
+
+     color: #ffffff
+
+}
+
+.social-link-icon{
+     font-size: 1.8rem;
+     color: #ffffff
+}
+
+main .bio__section-socialLinks a:hover {
+     opacity: 0.8;
+}
+
+main .bio__section-socialLinks a:nth-child(1) {
+     background: linear-gradient(274.27deg, #0A66C2 2.34%, #4F9FEE 100%);
+}
+main .bio__section-socialLinks a:nth-child(2) {
+     background: linear-gradient(274.27deg, #00050B 2.34%, #000F1E 100%);
+}
      
-     #page{
-          width: 100%;
-          height: 100vh;
-     }
-     
-     header {
-          width: 100%;
-          height: 280px;
-     
-          display: flex;
-          justify-content: center;
-          align-items: center;
-     
-          position: relative;
-     
-          background-image: linear-gradient( 154deg,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
-          background-repeat: no-repeat;
-     }
-     
-     header .hero-avatar {
-          width: 200px;
-          height: 200px;
-     
-          display: flex;
-          justify-content: center;
-          align-items: center;
-     
-          position: absolute;
-          bottom: -60px;
-     
-          background-image: linear-gradient(180deg, #0A0C10 0%, rgba(39, 42, 49, 0.41) 100%);
-     
-          border-radius: 50%;
-     }
-     
-     header .hero-avatar img {
-          width: 190px;
-          height: 190px;
-     
-          border-radius: 50%;
-     }
-     
-     main {
-          width: 100%;
-          height: auto;
-     
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-     
-          padding-top: 40px
-     }
-     
-     main .bio__sectio-title{
-          color: aliceblue;
-          font-family: 'Roboto', sans-serif;
-     
-          text-align: center;
-     }
-     
-     main .bio__sectio-title h1 {
-          font-weight: 700;
-          font-size: 48px;
-          line-height: 39px;
-     }
-     
-     main .bio__sectio-title h4 {
-          font-weight: 700;
-          font-size: 28px;
-          line-height: 0px;
-          font-weight: 400;
-     }
-     
-     main .bio__section-stack{
-          display: flex;;
-          gap: 16px
-     }
-     
-     main .bio__section-stack .bio-stack__svg{
-          width: 52px;
-          height: 52px;
-     }
-     
-     main .bio__section-stack .icon-html{
-          fill: #E9662E;
-     }
-     main .bio__section-stack .icon-css{
-          fill: #03A7DB;
-     }
-     main .bio__section-stack .icon-js{
-          fill: #ECC80D;
-     }
-     
-     main .bio__section-aboutme {
-          width: 500px;
-          margin-top: 24px;
-     }
-     
-     main .bio__section-aboutme p{
-          font-family: 'Roboto', sans-serif;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 19px;
-          text-align: center;
-          color:aliceblue;
-     }
-     
-     main .bio__section-socialLinks {
-          display: flex;
-          flex-direction: row;
-          gap: 16px;
-     
-          margin-top: 50px;
-     }
-     
-     main .bio__section-socialLinks button {
-          border-radius: 8px;
-          border: none;
-          font-size: 1em;
-          cursor: pointer;
-          outline: none;
-     
-          width: 146px;
-          height: 48px;
-     
-          transition: 0.3s;
-     }
-     
-     main .bio__section-socialLinks button:hover {
-          opacity: 0.6;
-          transition: 0s
-     }
-     
-     main .bio__section-socialLinks button:nth-child(1) {
-          background: linear-gradient(274.27deg, #0A66C2 2.34%, #4F9FEE 100%);
-     }
-     main .bio__section-socialLinks button:nth-child(2) {
-          background: linear-gradient(274.27deg, #00050B 2.34%, #000F1E 100%);
-     }
-     
-     main .bio__section-socialLinks button a{
-         text-decoration: none;
-         font-size: 20px;
-     
-          display: flex;
-          justify-content: center;
-          align-items: center;
-     
-          gap: 8px;
-          color: white;
-     }
-     
-     main .bio__section-socialLinks button a .bio-social__svg{
-          width: 24px;
-          height: 24px;
-     }
-     
-     main .bio__section-socialLinks button .bio-social__svg{
-          fill: whitesmoke;
-     }

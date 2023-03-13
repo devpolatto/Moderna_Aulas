@@ -18,76 +18,64 @@ closeCart.addEventListener('click', () => {
 })
 //  =============================
 
-// Remove Item from the cart =============================
-
-// function removeItem(event, position){
-//      const elemtenParent = document.getElementsByClassName('cart-box')
-//      console.log(elemtenParent, "position:" + position)
-//      if(elemtenParent.length == 0){
-//           elemtenParent[0].remove()
-//      } else{
-//           elemtenParent[position].remove()
-//      }
-     
-// }
+// remove item do carrinho =============================
 function removeItem(event){
      var buttonClicked = event.target;
-     // console.log(buttonClicked)
-     // console.log(buttonClicked.parentNode)
      buttonClicked.parentElement.remove();
      updateTotalCartValue()
 }
-// =============================
+// =====================================================
 
-// change quantity of the product =============================
+// altera a quantidade de produtos =========================
 function quantityChanged(event){
      const input = event.target;
 
-     if(Number.isNaN(input.value) || input.value <= 0) {
+     if(isNaN(input.value) || input.value <= 0) {
           input.value = 1;
      }
 
      updateTotalCartValue()
 }
-// =============================
+// ==========================================================
 
-// update total cart value =============================
+// atualiza o valor total do carrinho =======================
 function updateTotalCartValue(){
-     // const cartContent = document.getElementsByClassName('cart-content')[0]; 
-     // console.log(cartContent);
      const cartBoxes = document.getElementsByClassName('cart-box'); 
-     console.log(cartBoxes);
 
      var total = 0;
 
-     for(var i = 0; i < cartBoxes.length; i++){
-          var cartBox = cartBoxes[i];
-          var priceElement = cartBox.querySelectorAll('.cart-price')[0]
-          var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0]
-          var price = parseFloat(priceElement.innerText.replace("R$", ""))
-          var quantity = quantityElement.value
-          total = total + (price * quantity);
-
-          console.log(cartBox);
-          console.log(price);
-          console.log(quantityElement);
-
-          document.getElementsByClassName('cart-total-price')[0].innerHTML = "R$" + total;
-     }
+     if(cartBoxes.length <= 0) {
+          document.getElementsByClassName('cart-total-price')[0].innerHTML = "R$" + 0;
+     } else {
+          for(var i = 0; i < cartBoxes.length; i++){
+               var cartBox = cartBoxes[i];
+               var priceElement = cartBox.querySelectorAll('.cart-price')[0]
+               var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0]
+               var priceWithout$ = priceElement.innerText.replace("R$", "") // remove o R$ do valor do produto
+               var price = parseFloat(priceWithout$.replace(",", "."))
+               var quantity = quantityElement.value
+               total = total + (price * quantity);
+     
+               total = Math.round(total * 100)/100
+     
+               document.getElementsByClassName('cart-total-price')[0].innerHTML = "R$" + total;
+          }
+     }    
 }
-
-// =============================
+// =========================================================
 
 function ready() {
+
+     updateTotalCartValue() // atualiza o valor total do carrinho com os items pre inseridos
+
      const removeCartButton = document.querySelectorAll(".cart-product-remove-icon")
-     // console.log(removeCartButton)
      for(let i = 0; i < removeCartButton.length; i++){
           const button = removeCartButton[i]
           button.addEventListener("click", (event) => removeItem(event))
      }
 
-     // change the quantity
-     const quatityInputElement = document.querySelector(".cart-quantity")
+     // altera a quantidade de produtos no carrinho
+     const quatityInputElement = document.getElementsByClassName("cart-quantity")
      for(let i = 0; i < quatityInputElement.length; i++){
           const input = quatityInputElement[i]
           input.addEventListener("change", (event) => quantityChanged(event))

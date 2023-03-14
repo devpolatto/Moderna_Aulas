@@ -26,6 +26,56 @@ function removeItem(event){
 }
 // =====================================================
 
+// adciona item no carrinho ================================
+
+function addProductToCart(title, price, image){
+     const cartContent = document.getElementsByClassName("cart-content")[0]
+     const cartShopBox = document.createElement("div");
+     cartShopBox.classList.add("cart-box");
+     const cartItemsNames = cartContent.getElementsByClassName('cart-product-title');
+
+     for(var i = 0; i < cartItemsNames; i++){
+          if(cartItemsNames[1].innerText == title) {
+               alert('O produto ja foi adicionado ao carrinho')
+               return
+          }
+     }
+
+     const cartBoxContent = `
+          <img src="${image}" alt="" class="cart-img">
+          <div class="detail-box">
+               <div class="cart-product-title">${title}</div>
+               <div class="cart-price">${price}</div>
+               <input type="number" class="cart-quantity" name="" id="" value="1">
+          </div>
+          <i class='bx bxs-trash cart-product-remove-icon'></i>
+     `;
+
+     cartShopBox.innerHTML = cartBoxContent;
+     cartContent.append(cartShopBox);
+
+     cartShopBox
+          .getElementsByClassName('cart-product-remove-icon')[0]
+          .addEventListener('click', (event) => removeItem(event));
+     cartShopBox
+          .getElementsByClassName('cart-quantity')[0]
+          .addEventListener('click', (event) => quantityChanged(event));
+}
+
+function addToCartClick(event){
+     const button = event.target
+     const shopProducts = button.parentElement
+     const title = shopProducts.getElementsByClassName('product-title')[0].innerText;
+     const price = shopProducts.getElementsByClassName('price')[0].innerText;
+     const productImg = shopProducts.getElementsByClassName('product-img')[0].src;
+     console.log(title, price, productImg)
+
+     addProductToCart(title, price, productImg)
+
+     updateTotalCartValue()
+}
+// =========================================================
+
 // altera a quantidade de produtos =========================
 function quantityChanged(event){
      const input = event.target;
@@ -79,5 +129,12 @@ function ready() {
      for(let i = 0; i < quatityInputElement.length; i++){
           const input = quatityInputElement[i]
           input.addEventListener("change", (event) => quantityChanged(event))
+     }
+
+     // atribui a funcao de adicionar ao carrinho a todos os botoes
+     const addCart = document.getElementsByClassName('add-to-cart');
+     for(let i = 0; i < addCart.length; i++){
+          const button = addCart[i]
+          button.addEventListener('click', (event) => addToCartClick(event))
      }
 }
